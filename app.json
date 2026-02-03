@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
@@ -13,17 +13,64 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.benchspotter.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "BenchSpotter needs camera access to take photos of benches.",
+        "NSPhotoLibraryUsageDescription": "BenchSpotter needs photo library access to upload bench photos.",
+        "NSLocationWhenInUseUsageDescription": "BenchSpotter needs your location to find nearby benches.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.benchspotter.app",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#6366F1",
+          "defaultChannel": "default"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "BenchSpotter needs your location to find nearby benches."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "BenchSpotter needs access to your photos to upload bench images.",
+          "cameraPermission": "BenchSpotter needs camera access to take photos of benches."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "4e82fa83-9a51-4c07-8dbe-c172cab4c290"
+      }
+    },
+    "owner": "erisbpdev"
   }
 }

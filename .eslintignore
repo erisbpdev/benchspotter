@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.expo/
+android/
+ios/
+web-build/
+
+# Config files
+*.config.js
+babel.config.js
+metro.config.js
+
+# Coverage
+coverage/
+
+# Cache
+.cache/

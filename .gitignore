@@ -30,12 +30,51 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
-.env*.local
+# Environment variables - IMPORTANT: Never commit secrets!
+.env
+.env.*
+!.env.example
 
 # typescript
 *.tsbuildinfo
 
-# generated native folders
+# Generated native folders
 /ios
 /android
+
+# Keystores and signing credentials
+*.keystore
+!debug.keystore
+
+# Google/Firebase services config (contains API keys)
+google-services.json
+GoogleService-Info.plist
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing
+coverage/
+
+# Logs
+*.log
+logs/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+nul
+
+# Build artifacts
+build/
+*.apk
+*.aab
+*.ipa
